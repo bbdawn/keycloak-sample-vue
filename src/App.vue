@@ -1,7 +1,7 @@
 <template>
 <nav class="navbar navbar-expand-lg bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">joohyun's</a>
+    <a class="navbar-brand" href="#">Keycloak sample</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -20,45 +20,29 @@
         <a class="nav-link" href="#" :blog="blog">Detail</a>
         </router-link>
 
+        <router-link to="/axios-test">
+          <a class="nav-link" href="#" >AxiosTest</a>
+        </router-link>
+
       </div>
     </div>
   </div>
 </nav>
 
-<router-link to="/">홈페이지 </router-link>
-<router-link to="/list">리스트페이지</router-link>
-<router-link to="/detail">상세보기</router-link>
+
 
 <div class="mt-4">
 <router-view :blog="blog"></router-view>
 </div>
 
-<!-- <List :blog="blog"/> -->
-
-<button @click="getMembers">눌러봥!!</button>
 
 </template>
 
 <script>
-// import List from './components/List.vue';
 import blog from './assets/blog.js';
-import axios from 'axios';
 
 export default {
   name: 'App',
-  methods: {
-    getMembers(){
-      axios({
-        url:"/api/hello",
-        method:"GET"
-      }).then(res=>{
-        console.log(res);
-      })
-      .catch(err=>{
-        console.log(err);
-      })
-    }
-  },
   data(){
     return {
        blog : blog

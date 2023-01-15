@@ -2,6 +2,7 @@ import { createWebHistory, createRouter } from "vue-router";
 import List from './components/List.vue';
 import Home from './components/Home.vue';
 import Detail from './components/Detail.vue';
+import AxiosTest from "@/components/AxiosTest.vue";
 
 const routes = [
   {
@@ -17,7 +18,12 @@ const routes = [
   {
     path: "/detail",
     component: Detail,
+  },
+  {
+    path: "/axios-test",
+    component: AxiosTest,
   }
+
 ];
 
 const router = createRouter({
